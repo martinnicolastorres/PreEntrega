@@ -1,0 +1,42 @@
+{% extends "AppCoder/Padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>-- Nuestra primer red social -- </h1>
+  
+
+    <h3>Podes buscar una Pagina:</h3>
+
+    <form action="/AppCoder/buscar/" method="GET">
+
+        <input type="text" name="nombre" >
+
+        <input type="submit" value="Buscar">
+
+
+
+
+    </form>
+
+    
+
+    {% if pagina %}
+
+    <p>Estamos buscando el: {{nombre}}</p>
+
+    <ul>
+	{% for paginas in pagina %}
+		<li> {{pagina.nombre}} </li>
+		<li> {{pagina.tema}} </li>
+        <li> {{pagina.integrantes}} </li>
+	{% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+{% endblock %}
