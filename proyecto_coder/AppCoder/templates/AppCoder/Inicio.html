@@ -5,37 +5,32 @@
 {% block contenidoQueCambia %}
 
 
-    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-    <h1>-- Nuestra primer red social -- </h1>
-  
+    
+    <h1>-- Busqueda -- </h1>
 
-    <h3>Podes buscar una Pagina:</h3>
 
-    <form action="/AppCoder/buscar/" method="GET">
+    <h3>Podes buscar una pagina:</h3>
 
-        <input type="text" name="nombre" >
-
+    <form action="/AppCoder/buscar_pagina/" method="GET">
+        <input type="text" name="tema" >
         <input type="submit" value="Buscar">
-
-
-
-
     </form>
 
     
 
     {% if pagina %}
 
-    <p>Estamos buscando el: {{nombre}}</p>
+    <p>Se encontro: "{{nombre}}"</p>
 
     <ul>
-	{% for paginas in pagina %}
 		<li> {{pagina.nombre}} </li>
 		<li> {{pagina.tema}} </li>
         <li> {{pagina.integrantes}} </li>
-	{% endfor %}
-
     </ul>
+    {% endif %}
+
+    {% if error %}
+        <p>{{error}}</p>
 
     {% endif %}
 

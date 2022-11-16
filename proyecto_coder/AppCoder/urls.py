@@ -11,6 +11,7 @@ urlpatterns = [
     path('paginas', views.paginas, name="Paginas"),
     path('PaginaFormulario', views.PaginaFormulario, name="PaginaFormulario"),
     path('EventoFormulario',  views.EventoFormulario, name="EventoFormulario"),
-    path('buscar/', views.buscar),
+    path('SeguidorFormulario',  views.SeguidorFormulario, name="SeguidorFormulario"),
+    path('buscar_pagina/', views.buscar_pagina),
 
 ]
